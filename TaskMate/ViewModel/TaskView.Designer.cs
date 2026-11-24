@@ -31,7 +31,7 @@
             label1 = new Label();
             label2 = new Label();
             panel1 = new Panel();
-            label3 = new Label();
+            NoTaskLbl = new Label();
             panel2 = new Panel();
             AddScheduleBtn = new Button();
             panel1.SuspendLayout();
@@ -56,29 +56,29 @@
             label2.Font = new Font("Segoe UI", 15F);
             label2.Location = new Point(18, 13);
             label2.Name = "label2";
-            label2.Size = new Size(100, 28);
+            label2.Size = new Size(89, 28);
             label2.TabIndex = 3;
-            label2.Text = "Your Tasks";
+            label2.Text = "My Tasks";
             label2.Click += label2_Click;
             // 
             // panel1
             // 
             panel1.Anchor = AnchorStyles.Top | AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            panel1.Controls.Add(label3);
+            panel1.Controls.Add(NoTaskLbl);
             panel1.Location = new Point(0, 63);
             panel1.Name = "panel1";
             panel1.Size = new Size(934, 500);
             panel1.TabIndex = 4;
             // 
-            // label3
+            // NoTaskLbl
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 13F);
-            label3.Location = new Point(453, 221);
-            label3.Name = "label3";
-            label3.Size = new Size(74, 25);
-            label3.TabIndex = 0;
-            label3.Text = "No Task";
+            NoTaskLbl.AutoSize = true;
+            NoTaskLbl.Font = new Font("Segoe UI", 13F);
+            NoTaskLbl.Location = new Point(453, 221);
+            NoTaskLbl.Name = "NoTaskLbl";
+            NoTaskLbl.Size = new Size(74, 25);
+            NoTaskLbl.TabIndex = 0;
+            NoTaskLbl.Text = "No Task";
             // 
             // panel2
             // 
@@ -122,7 +122,7 @@
         private Label label2;
         private Panel panel1;
         private Panel panel2;
-        private Label label3;
+        private Label NoTaskLbl;
         private Button AddScheduleBtn;
     }
 }
