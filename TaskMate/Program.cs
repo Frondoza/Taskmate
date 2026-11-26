@@ -1,16 +1,27 @@
+using TaskMate.Utilities;
+
 namespace TaskMate
 {
     internal static class Program
     {
-        /// <summary>
-        ///  The main entry point for the application.
-        /// </summary>
         [STAThread]
         static void Main()
         {
-            // To customize application configuration such as set high DPI settings or default font,
-            // see https://aka.ms/applicationconfiguration.
             ApplicationConfiguration.Initialize();
+            try
+            {
+                Database.Initialize();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(
+                    "TaskMate could not connect to MySQL or initialize its database.\n\n" +
+                    "Check that MySQL Server is running and update the Server, User, and Password values in Utilities/Database.cs.\n\n" +
+                    ex.Message,
+                    "Database connection error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
             Application.Run(new taskMateApp());
         }
     }
